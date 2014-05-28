@@ -22,7 +22,7 @@ class DiffyCommand(sublime_plugin.TextCommand):
             'highlighted_lines', 
             lines, 
             'line', 
-            '', 
+            'dot', 
             sublime.DRAW_OUTLINED
         )
 
