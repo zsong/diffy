@@ -1,0 +1,19 @@
+[
+  {
+    "keys": [
+      "super+k",
+      "super+d"
+    ],
+    "command": "diffy"
+  },
+  {
+    "keys": [
+      "super+k",
+      "super+c"
+    ],
+    "command": "diffy",
+    "args": {
+      "action": "clear"
+    }
+  }
+]
