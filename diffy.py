@@ -10,6 +10,10 @@ class DiffyCommand(sublime_plugin.TextCommand):
     def clear(self, view):
         view.erase_regions('highlighted_lines')
 
+
+    """
+    return the marked lines
+    """
     def draw_difference(self, view, line_numbers):
         self.clear(view)
 
@@ -21,10 +25,12 @@ class DiffyCommand(sublime_plugin.TextCommand):
         view.add_regions(
             'highlighted_lines', 
             lines, 
-            'line', 
+            'keyword', 
             'dot', 
             sublime.DRAW_OUTLINED
         )
+
+        return lines
 
     def calculate_diff(self, text1, text2):
         d = difflib.Differ()
@@ -43,6 +49,10 @@ class DiffyCommand(sublime_plugin.TextCommand):
             index += 1 
 
         return diff_1, diff_2
+
+    def set_view_point(self, view, lines):
+        if len(lines) > 0:
+            view.show(lines[0])
 
     def run(self, edit, **kwargs):
         window = self.view.window()
@@ -67,5 +77,8 @@ class DiffyCommand(sublime_plugin.TextCommand):
                 if len(text_1) > 0 and len(text_2) > 0:
                     diff_1, diff_2 = self.calculate_diff(text_1.split('\n'), text_2.split('\n'))
 
-                    self.draw_difference(view_1, diff_1)
-                    self.draw_difference(view_2, diff_2)
+                    highlighted_lines_1 = self.draw_difference(view_1, diff_1)
+                    highlighted_lines_2 = self.draw_difference(view_2, diff_2)
+
+                    self.set_view_point(view_1, highlighted_lines_1)
+                    self.set_view_point(view_2, highlighted_lines_2)
