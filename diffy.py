@@ -1,5 +1,6 @@
 import sublime, sublime_plugin
 import difflib
+from pprint import pprint as pp
 
 class DiffyCommand(sublime_plugin.TextCommand):
     def get_entire_content(self, view):
@@ -32,21 +33,24 @@ class DiffyCommand(sublime_plugin.TextCommand):
 
         return lines
 
+    def parse_diff_list(self, lst):
+        diff = []
+        index = 0
+        for line in lst:
+            if line[0] == '?': continue
+            elif line[0] == '+': index -= 1
+            elif line[0] == '-': diff.append(index)
+            index += 1
+
+        return diff
+
     def calculate_diff(self, text1, text2):
         d = difflib.Differ()
         result = list(d.compare(text1, text2))
+        diff_1 = self.parse_diff_list(result)
 
-        diff_1 = []
-        diff_2 = []
-
-        index = 0
-        for line in result:
-            if line[0] == '-':
-                diff_1.append(index)
-            elif line[0] == '+':
-                diff_2.append(index)
-
-            index += 1 
+        result = list(d.compare(text2, text1))
+        diff_2 = self.parse_diff_list(result)
 
         return diff_1, diff_2
 
