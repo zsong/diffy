@@ -8,6 +8,9 @@ class RegionToDraw(object):
         self.line_number = line_number
         self.start = start
 
+    def get_data(self):
+        return (self.line_number, self.start)
+
     def __str__(self):
         return ""
         
@@ -75,7 +78,6 @@ class Diffy(object):
                 else:
                     s = difflib.SequenceMatcher(None, pre_line_content, line_content)
                     for tag, i1, i2, j1, j2 in s.get_opcodes():
-
                         if tag == 'insert':
                             r = WordToDraw(line_num, j1, j2)
                             diff.append(r)

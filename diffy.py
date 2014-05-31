@@ -1,6 +1,6 @@
 import sublime, sublime_plugin
 
-from .diffy_lib import *
+from .diffy_lib import diffier
 
 
 class DiffyCommand(sublime_plugin.TextCommand):
@@ -37,7 +37,7 @@ class DiffyCommand(sublime_plugin.TextCommand):
             view.show(lines[0])
 
     def run(self, edit, **kwargs):
-        diffy = Diffy()
+        diffy = diffier.Diffy()
         window = self.view.window()
 
         action = kwargs.get('action', None)
