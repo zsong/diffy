@@ -1,5 +1,5 @@
 {
   "url": "https://github.com/zsong/diffy",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A sublime plugin to show difference between 2 files. It supports both Sublime 2 and 3."
 }
