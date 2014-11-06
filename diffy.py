@@ -1,6 +1,6 @@
 import sublime, sublime_plugin
 
-from .diffy_lib import diffier
+from diffy_lib import diffier
 
 
 class DiffyCommand(sublime_plugin.TextCommand):
