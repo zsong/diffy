@@ -1,7 +1,10 @@
 import sublime, sublime_plugin
+import sys
 
-from diffy_lib import diffier
-
+if sys.version_info >= (3, 0):
+    from .diffy_lib import diffier
+else:
+    from diffy_lib import diffier
 
 class DiffyCommand(sublime_plugin.TextCommand):
     def get_entire_content(self, view):
