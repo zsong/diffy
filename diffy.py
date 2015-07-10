@@ -45,11 +45,8 @@ class DiffyCommand(sublime_plugin.TextCommand):
 
         action = kwargs.get('action', None)
 
-        view_1 = None
-        view_2 = None
-        if window.num_groups() == 2:
-            view_1 = window.active_view_in_group(0)
-            view_2 = window.active_view_in_group(1)
+        view_1 = window.active_view_in_group(0)
+        view_2 = window.active_view_in_group(1)
 
         if action == 'clear':
             if view_1: self.clear(view_1)
