@@ -5,7 +5,7 @@
 	},
 	{
 		"caption": "Diffy (2 Columns)",
-		"mnemonic": "d",
+		"mnemonic": "D",
 		"id": "diffy",
 		"children":
 		[
