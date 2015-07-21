@@ -1,0 +1,25 @@
+[
+	{
+		"caption": "-",
+		"id": "separator"
+	},
+	{
+		"caption": "Diffy (2 Columns)",
+		"mnemonic": "d",
+		"id": "diffy",
+		"children":
+		[
+			{
+				"id" : "diffyStart",
+				"caption" : "Compare",
+				"command" : "diffy"
+			},
+			{
+				"id" : "diffyEnd",
+				"caption": "Clear", 
+				"command": "diffy",
+				"args": {"action": "clear"}
+			}
+		]
+	}
+]
