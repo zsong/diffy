@@ -4,4 +4,10 @@
     "caption" : "Diffy (needs side-by-side view first)",
     "command" : "diffy"
 }
+{
+    "id" : "diffyClear",
+    "caption": "Diffy clear", 
+    "command": "diffy",
+    "args": {"action": "clear"}
+}
 ]
