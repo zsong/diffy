@@ -1,12 +1,12 @@
 [
 {
-    "id" : "diffy",
-    "caption" : "Diffy (needs side-by-side view first)",
+    "id" : "diffyStart",
+    "caption" : "Diffy start (needs side-by-side view first)",
     "command" : "diffy"
 },
 {
-    "id" : "diffyClear",
-    "caption": "Diffy clear", 
+    "id" : "diffyEnd",
+    "caption": "Diffy end", 
     "command": "diffy",
     "args": {"action": "clear"}
 }
