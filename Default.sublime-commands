@@ -1,0 +1,4 @@
+[
+	{ "caption": "Diffy Compare", "command": "diffy" },
+	{ "caption": "Diffy Cleanup", "command": "diffy", "args": {"action": "clear"} },
+]
