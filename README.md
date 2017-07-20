@@ -14,7 +14,7 @@ After installing the plugin, set the layout to be 2 columns via *View -> Layout 
 1. To compare and show the diffs, press **CTRL + k** followed by **CTRL + d**.
 2. To clear the marked lines, press press **CTRL + k** followed by **CTRL + c**.
 
-###Settings
+### Settings
 #### The default key binding for Mac is
 
 ```
