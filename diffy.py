@@ -45,8 +45,8 @@ class DiffyCommand(sublime_plugin.TextCommand):
 
         action = kwargs.get('action', None)
 
-        view_1 = window.active_view_in_group(0)
-        view_2 = window.active_view_in_group(1)
+        view_1 = window.selected_sheets()[0].view() if len(window.selected_sheets()) >= 2 else window.active_view_in_group(0) 
+        view_2 = window.selected_sheets()[1].view() if len(window.selected_sheets()) >= 2 else window.active_view_in_group(1)
 
         if action == 'clear':
             if view_1: self.clear(view_1)
